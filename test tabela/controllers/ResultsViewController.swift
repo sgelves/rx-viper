@@ -7,15 +7,24 @@
 //
 
 import UIKit
-
 class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
 
-    let resultData = ["Resultado um", "Dois", "Informacao aditional do novo resultado que e muito mais longa do que o normal"]
+    var resultData: [Result] = []
+    let resultArray = ["Resultado um", "Dois", "Informacao aditional do novo resultado que e muito mais longa do que o normal"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+
+        let resultsService = ResultsService()
+        resultsService.queryResults() { data in
+            guard data != nil else {
+                return
+            }
+            self.resultData = data!
+            self.tableView.reloadData()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -24,8 +33,7 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCellTableViewCell
-        cell.title.text = resultData[indexPath.row]
-        print(indexPath.row)
+        cell.title.text = resultData[indexPath.row].title
         return cell
     }
 
