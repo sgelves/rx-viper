@@ -7,5 +7,6 @@ target 'test tabela' do
 
   # Pods for test tabela
   pod 'Alamofire', '~> 4'
+  pod 'AlamofireImage', '~> 3.5'
 
 end

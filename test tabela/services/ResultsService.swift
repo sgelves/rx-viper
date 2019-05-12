@@ -8,12 +8,11 @@
 
 import UIKit
 import Alamofire
-
+import AlamofireImage
 
 class ResultsService: NSObject {
     
     let DOMAIN = "http://private-00fe4-sergiogelves.apiary-mock.com"
-    
     
     func queryResults (completionHanlder: @escaping (_ res: [Result]?) -> Void) {
 
@@ -39,6 +38,20 @@ class ResultsService: NSObject {
 
         }
 
+    }
+    
+    func queryUrlImage (url: String, completionHandler: @escaping (UIImage)->Void) {
+        Alamofire.request(url).responseImage { response in
+            debugPrint(response)
+            
+            //print(response.request)
+            //(response.response)
+            debugPrint(response.result)
+            
+            if let image = response.result.value {
+                completionHandler(image)
+            }
+        }
     }
 
 }

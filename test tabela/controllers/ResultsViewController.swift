@@ -7,17 +7,18 @@
 //
 
 import UIKit
+
 class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
 
     var resultData: [Result] = []
     let resultArray = ["Resultado um", "Dois", "Informacao aditional do novo resultado que e muito mais longa do que o normal"]
+    let resultsService = ResultsService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let resultsService = ResultsService()
+        
         resultsService.queryResults() { data in
             guard data != nil else {
                 return
@@ -33,7 +34,15 @@ class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCellTableViewCell
-        cell.title.text = resultData[indexPath.row].title
+        let result = resultData[indexPath.row]
+        cell.title.text = result.title
+        
+        if (result.thumbnail != nil) {
+            resultsService.queryUrlImage(url: result.thumbnail!) { image in
+                cell.thumbnail.image = image
+            }
+        }
+        
         return cell
     }
 
