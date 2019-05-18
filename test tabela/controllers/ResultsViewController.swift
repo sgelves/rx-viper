@@ -8,22 +8,18 @@
 
 import UIKit
 
-class ResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LocaisData {
+
     @IBOutlet weak var tableView: UITableView!
 
     var resultData: [Local] = []
-    let resultArray = ["Resultado um", "Dois", "Informacao aditional do novo resultado que e muito mais longa do que o normal"]
     let resultsService = ResultsService()
+    var currentPage: Int = 0
+    var isLoading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        resultsService.queryResults() { data in
-            guard data != nil else {
-                return
-            }
-            self.resultData = data!
+        self.getNextPage {
             self.tableView.reloadData()
         }
     }
