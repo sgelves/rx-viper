@@ -12,11 +12,23 @@ import AlamofireImage
 
 class ResultsService: NSObject {
     
-    let DOMAIN = "http://private-00fe4-sergiogelves.apiary-mock.com"
+    let DOMAIN = "https://rest.codemoney.com.br/v2/sale/list-distance"
     
-    func queryResults (completionHanlder: @escaping (_ res: [Result]?) -> Void) {
+    func queryResults (completionHanlder: @escaping (_ res: [Local]?) -> Void) {
+        
+        let params = [
+            "page": 0,
+            "lat": -27.0912233,
+            "lng": -48.8892335,
+            "searchString": ""
+            ] as [String : Any]
 
-        Alamofire.request("\(DOMAIN)/results-with-image").validate().responseJSON { response in
+        Alamofire.request(
+            DOMAIN,
+            method: .get,
+            parameters: params,
+            encoding: URLEncoding(destination: .queryString)
+        ).validate().responseJSON { response in
             // response serialization result
             switch response.result {
             case .success(let jsonArray):
@@ -27,9 +39,9 @@ class ResultsService: NSObject {
                     return
                 }
                 
-                var data: [Result] = []
+                var data: [Local] = []
                 for resultDictionary in responseArray {
-                    data.append(Result(dictionary: resultDictionary))
+                    data.append(Local(dictionary: resultDictionary))
                 }
                 completionHanlder(data)
             case .failure(let error):

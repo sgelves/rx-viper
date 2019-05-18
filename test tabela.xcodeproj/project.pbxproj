@@ -13,6 +13,7 @@
 		8361F073228788E700C582B8 /* ResultCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */; };
 		8361F07722878AC300C582B8 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361F07622878AC300C582B8 /* ResultsViewController.swift */; };
 		8361F07922878FF500C582B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361F07822878FF500C582B8 /* Default-568h@2x.png */; };
+		837BA5E822909A7C002EAEF3 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837BA5E722909A7C002EAEF3 /* Local.swift */; };
 		83865D5A228782580014D65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83865D59228782580014D65B /* AppDelegate.swift */; };
 		83865D5C228782580014D65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83865D5B228782580014D65B /* ViewController.swift */; };
 		83865D5F228782580014D65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83865D5D228782580014D65B /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCellTableViewCell.swift; sourceTree = "<group>"; };
 		8361F07622878AC300C582B8 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		8361F07822878FF500C582B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		837BA5E722909A7C002EAEF3 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
 		83865D56228782580014D65B /* test tabela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test tabela.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83865D59228782580014D65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83865D5B228782580014D65B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +85,14 @@
 			path = components;
 			sourceTree = "<group>";
 		};
+		837BA5E622909A33002EAEF3 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				837BA5E722909A7C002EAEF3 /* Local.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
 		83865D4D228782580014D65B = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +115,7 @@
 		83865D58228782580014D65B /* test tabela */ = {
 			isa = PBXGroup;
 			children = (
+				837BA5E622909A33002EAEF3 /* entities */,
 				832D69AD2288846D00C28ECA /* models */,
 				832C57F72287ADF200A89316 /* services */,
 				83865D6B228784E00014D65B /* controllers */,
@@ -260,6 +271,7 @@
 			files = (
 				832D69AF2288848B00C28ECA /* Result.swift in Sources */,
 				83865D5C228782580014D65B /* ViewController.swift in Sources */,
+				837BA5E822909A7C002EAEF3 /* Local.swift in Sources */,
 				832C57F92287AE7F00A89316 /* ResultsService.swift in Sources */,
 				8361F073228788E700C582B8 /* ResultCellTableViewCell.swift in Sources */,
 				83865D5A228782580014D65B /* AppDelegate.swift in Sources */,
