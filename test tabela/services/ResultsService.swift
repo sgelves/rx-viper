@@ -8,23 +8,23 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
 
 class ResultsService: NSObject {
     
-    let DOMAIN = "https://rest.codemoney.com.br/v2/sale/list-distance"
+    static let DOMAIN = "https://rest.codemoney.com.br/v2/"
     
-    func queryResults (completionHanlder: @escaping (_ res: [Local]?) -> Void) {
+    static func queryResults (page: Int, latitude: Double, longitude:Double, searchString: String,
+                              completionHanlder: @escaping (_ res: [Local]?) -> Void) {
         
         let params = [
-            "page": 0,
-            "lat": -27.0912233,
-            "lng": -48.8892335,
-            "searchString": ""
+            "page": page,
+            "lat": latitude,
+            "lng": longitude,
+            "searchString": searchString
             ] as [String : Any]
 
         Alamofire.request(
-            DOMAIN,
+            "\(DOMAIN)sale/list-distance",
             method: .get,
             parameters: params,
             encoding: URLEncoding(destination: .queryString)
@@ -51,19 +51,4 @@ class ResultsService: NSObject {
         }
 
     }
-    
-    func queryUrlImage (url: String, completionHandler: @escaping (UIImage)->Void) {
-        Alamofire.request(url).responseImage { response in
-            debugPrint(response)
-            
-            //print(response.request)
-            //(response.response)
-            debugPrint(response.result)
-            
-            if let image = response.result.value {
-                completionHandler(image)
-            }
-        }
-    }
-
 }

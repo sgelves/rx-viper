@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, LocaisData {
 
     @IBOutlet weak var tableView: UITableView!
 
     var resultData: [Local] = []
-    let resultsService = ResultsService()
     var currentPage: Int = 0
     var isLoading: Bool = false
     
@@ -34,11 +34,21 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.title.text = result.placeName
         
         if (result.placePhoto != nil) {
-            resultsService.queryUrlImage(url: result.placePhoto!) { image in
-                cell.thumbnail.image = image
-            }
+            cell.thumbnail.kf.setImage(with: URL(string: result.placePhoto!))
         }
         
         return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offset > contentHeight - scrollView.frame.height * 2 {
+            self.getNextPage {
+                self.tableView.reloadData()
+            }
+        }
+        
     }
 }

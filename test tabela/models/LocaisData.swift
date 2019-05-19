@@ -13,7 +13,6 @@ protocol LocaisData: NSObject {
     var resultData: [ Local] { get set }
     var currentPage: Int { get set }
     var isLoading: Bool { get set }
-    var resultsService: ResultsService { get }
     
 }
 
@@ -24,9 +23,10 @@ extension LocaisData {
             return
         }
         self.isLoading = true
-        self.resultsService.queryResults() { data in
-            self.isLoading = false
+        ResultsService.queryResults(page: self.currentPage, latitude: -27.0912233,
+                                    longitude: -48.8892335, searchString: "") { data in
             guard data != nil else {
+                self.isLoading = false
                 return
             }
             
@@ -36,8 +36,10 @@ extension LocaisData {
             if (data!.count < 15) {
                 self.currentPage = -1
             } else {
-                self.currentPage += 15
+                self.currentPage += 1
             }
+                                        
+            self.isLoading = false
             completionHandler()
         }
         
