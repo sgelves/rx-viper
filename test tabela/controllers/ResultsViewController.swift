@@ -10,7 +10,9 @@ import UIKit
 import Kingfisher
 import CoreLocation
 
-class ResultsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, LocaisModel {
+class ResultsViewController: UIViewController,
+UITableViewDataSource, UITableViewDelegate,
+CLLocationManagerDelegate, LocaisModel {
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -21,9 +23,13 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
     private var coordinate: CLLocationCoordinate2D?
     var locationManager: CLLocationManager = CLLocationManager()
     
+    
+    var searchController : UISearchController! = UISearchController(searchResultsController: nil)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestLocation()
+        self.createSearhBar()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -42,6 +48,15 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    func loadData () {
+        if self.coordinate != nil {
+            self.getNextPage(latitude: self.coordinate!.latitude, longitude: self.coordinate!.longitude,
+                             searchString: "") {
+                                self.tableView.reloadData()
+            }
+        }
+    }
+    
     /*
         Infinite scroll functionality
     */
@@ -49,11 +64,8 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
         let offset = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         
-        if (offset > contentHeight - scrollView.frame.height * 2) && self.coordinate != nil {
-            self.getNextPage(latitude: self.coordinate!.latitude, longitude: self.coordinate!.longitude,
-                             searchString: "") {
-                self.tableView.reloadData()
-            }
+        if offset > contentHeight - scrollView.frame.height * 2{
+            self.loadData()
         }
         
     }
@@ -109,9 +121,7 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
      */
     func setUserCoordinate (coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
-        self.getNextPage(latitude: coordinate.latitude, longitude: coordinate.longitude, searchString: "") {
-            self.tableView.reloadData()
-        }
+        self.loadData()
     }
     
     /*
@@ -126,5 +136,29 @@ class ResultsViewController: UIViewController, UITableViewDataSource, UITableVie
      */
     func errorUserCoordinateMessage () {
         
+    }
+    
+    func createSearhBar() {
+        
+        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Buscar um local"
+        navigationItem.searchController = UISearchController(searchResultsController: nil)
+
+        definesPresentationContext = true
+        
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        print("updateSearchResults")
+    }
+    
+    func searchBarIsEmpty() -> Bool {
+        // Returns true if the text is empty or nil
+        return searchController.searchBar.text?.isEmpty ?? true
+    }
+    
+    func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        loadData()
     }
 }

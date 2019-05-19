@@ -19,7 +19,7 @@ protocol LocaisModel: NSObject {
 extension LocaisModel {
     
     func getNextPage(latitude: Double, longitude: Double, searchString: String, completionHandler: @escaping () -> Void) {
-        guard (self.isFetchingLoais || self.currentPage < 0) else {
+        if (self.isFetchingLoais || self.currentPage < 0) {
             return
         }
         self.isFetchingLoais = true
