@@ -120,7 +120,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="W1j-86-OeJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1BH-HY-MJ7"/>
+                    <navigationItem key="navigationItem" title="Locais" id="1BH-HY-MJ7"/>
                     <connections>
                         <outlet property="tableView" destination="avB-qR-5Kw" id="B97-HE-vmz"/>
                     </connections>

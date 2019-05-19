@@ -45,7 +45,7 @@ extension LocaisModel {
         
     }
     
-    func restartState() {
+    func restartLocaisState() {
         guard !self.isFetchingLoais else {
             return
         }

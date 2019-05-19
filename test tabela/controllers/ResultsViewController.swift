@@ -32,6 +32,12 @@ CLLocationManagerDelegate, LocaisModel {
         self.createSearhBar()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // the bar hidden behavior is deactivated in viewdiedload, then here is gets hidden when scrolling again
+        navigationItem.hidesSearchBarWhenScrolling = true
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return resultData.count
     }
@@ -140,17 +146,14 @@ CLLocationManagerDelegate, LocaisModel {
     
     func createSearhBar() {
         
-        searchController.searchResultsUpdater = self as? UISearchResultsUpdating
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Buscar um local"
-        navigationItem.searchController = UISearchController(searchResultsController: nil)
-
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Buscar um local"
+        self.searchController.searchBar.delegate = self
+        navigationItem.searchController = self.searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
         definesPresentationContext = true
         
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        print("updateSearchResults")
     }
     
     func searchBarIsEmpty() -> Bool {
@@ -159,6 +162,15 @@ CLLocationManagerDelegate, LocaisModel {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
+        restartLocaisState()
         loadData()
+    }
+}
+
+extension ResultsViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // search only when the search button is hit
+        filterContentForSearchText(searchController.searchBar.text!)
     }
 }
