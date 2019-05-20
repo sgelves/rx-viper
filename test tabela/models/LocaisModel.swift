@@ -12,19 +12,22 @@ protocol LocaisModel: NSObject {
     
     var resultData: [ Local] { get set }
     var currentPage: Int { get set }
+    var latitude: Double { get set }
+    var longitude: Double { get set }
+    var searchString: String { get set }
     var isFetchingLoais: Bool { get set }
     
 }
 
 extension LocaisModel {
     
-    func getNextPage(latitude: Double, longitude: Double, searchString: String, completionHandler: @escaping () -> Void) {
+    func getNextPage(completionHandler: @escaping () -> Void) {
         if (self.isFetchingLoais || self.currentPage < 0) {
             return
         }
         self.isFetchingLoais = true
-        ResultsService.queryResults(page: self.currentPage, latitude: latitude,
-                                    longitude: longitude, searchString: searchString) { data in
+        ResultsService.queryResults(page: self.currentPage, latitude: self.latitude,
+                                    longitude: self.longitude, searchString: self.searchString) { data in
             guard data != nil else {
                 self.isFetchingLoais = false
                 return
@@ -45,11 +48,14 @@ extension LocaisModel {
         
     }
     
-    func restartLocaisState() {
+    func startLocaisState(latitude: Double, longitude: Double, searchString: String) {
         guard !self.isFetchingLoais else {
             return
         }
         self.resultData = []
         self.currentPage = 0
+        self.longitude = longitude
+        self.latitude = latitude
+        self.searchString = searchString
     }
 }

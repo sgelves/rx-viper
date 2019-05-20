@@ -19,6 +19,9 @@ CLLocationManagerDelegate, LocaisModel {
     var resultData: [Local] = []
     var currentPage: Int = 0
     var isFetchingLoais: Bool = false
+    var searchString: String = ""
+    var latitude: Double = 0.0
+    var longitude: Double = 0.0
     
     private var coordinate: CLLocationCoordinate2D?
     var locationManager: CLLocationManager = CLLocationManager()
@@ -56,9 +59,8 @@ CLLocationManagerDelegate, LocaisModel {
     
     func loadData () {
         if self.coordinate != nil {
-            self.getNextPage(latitude: self.coordinate!.latitude, longitude: self.coordinate!.longitude,
-                             searchString: "") {
-                                self.tableView.reloadData()
+            self.getNextPage() {
+                self.tableView.reloadData()
             }
         }
     }
@@ -127,6 +129,7 @@ CLLocationManagerDelegate, LocaisModel {
      */
     func setUserCoordinate (coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
+        self.startLocaisState(latitude: coordinate.latitude, longitude: coordinate.longitude, searchString: self.searchString)
         self.loadData()
     }
     
@@ -146,9 +149,10 @@ CLLocationManagerDelegate, LocaisModel {
     
     func createSearhBar() {
         
+        self.searchController.searchResultsUpdater = self // changing text event
         self.searchController.obscuresBackgroundDuringPresentation = false
         self.searchController.searchBar.placeholder = "Buscar um local"
-        self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.delegate = self // search button pressed event
         navigationItem.searchController = self.searchController
         navigationItem.hidesSearchBarWhenScrolling = false
         
@@ -162,12 +166,23 @@ CLLocationManagerDelegate, LocaisModel {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        restartLocaisState()
+        guard self.coordinate != nil else {
+            return
+        }
+        self.startLocaisState(latitude: self.coordinate!.latitude, longitude: self.coordinate!.longitude, searchString: searchText)
         loadData()
     }
 }
 
-extension ResultsViewController: UISearchBarDelegate {
+extension ResultsViewController: UISearchBarDelegate,  UISearchResultsUpdating {
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if (searchController.searchBar.text!.isEmpty && !self.searchString.isEmpty) {
+            // Clear the search filter when the model is not empty
+            print("cleaning search filter")
+            filterContentForSearchText(searchController.searchBar.text!)
+        }
+    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         // search only when the search button is hit
