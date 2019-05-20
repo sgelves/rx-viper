@@ -8,15 +8,27 @@
 
 import UIKit
 import Alamofire
-import AlamofireImage
 
 class ResultsService: NSObject {
     
-    let DOMAIN = "http://private-00fe4-sergiogelves.apiary-mock.com"
+    static let DOMAIN = "https://rest.codemoney.com.br/v2/"
     
-    func queryResults (completionHanlder: @escaping (_ res: [Result]?) -> Void) {
+    static func queryResults (page: Int, latitude: Double, longitude:Double, searchString: String,
+                              completionHanlder: @escaping (_ res: [Local]?) -> Void) {
+        
+        let params = [
+            "page": page,
+            "lat": latitude,
+            "lng": longitude,
+            "searchString": searchString
+            ] as [String : Any]
 
-        Alamofire.request("\(DOMAIN)/results-with-image").validate().responseJSON { response in
+        Alamofire.request(
+            "\(DOMAIN)sale/list-distance",
+            method: .get,
+            parameters: params,
+            encoding: URLEncoding(destination: .queryString)
+        ).validate().responseJSON { response in
             // response serialization result
             switch response.result {
             case .success(let jsonArray):
@@ -27,9 +39,9 @@ class ResultsService: NSObject {
                     return
                 }
                 
-                var data: [Result] = []
+                var data: [Local] = []
                 for resultDictionary in responseArray {
-                    data.append(Result(dictionary: resultDictionary))
+                    data.append(Local(dictionary: resultDictionary))
                 }
                 completionHanlder(data)
             case .failure(let error):
@@ -39,19 +51,4 @@ class ResultsService: NSObject {
         }
 
     }
-    
-    func queryUrlImage (url: String, completionHandler: @escaping (UIImage)->Void) {
-        Alamofire.request(url).responseImage { response in
-            debugPrint(response)
-            
-            //print(response.request)
-            //(response.response)
-            debugPrint(response.result)
-            
-            if let image = response.result.value {
-                completionHandler(image)
-            }
-        }
-    }
-
 }
