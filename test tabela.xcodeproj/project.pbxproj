@@ -12,7 +12,6 @@
 		832D69AF2288848B00C28ECA /* LocaisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832D69AE2288848B00C28ECA /* LocaisModel.swift */; };
 		8361F073228788E700C582B8 /* ResultCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */; };
 		8361F07722878AC300C582B8 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361F07622878AC300C582B8 /* ResultsViewController.swift */; };
-		8361F07922878FF500C582B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8361F07822878FF500C582B8 /* Default-568h@2x.png */; };
 		837BA5E822909A7C002EAEF3 /* Local.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837BA5E722909A7C002EAEF3 /* Local.swift */; };
 		83865D5A228782580014D65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83865D59228782580014D65B /* AppDelegate.swift */; };
 		83865D5F228782580014D65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83865D5D228782580014D65B /* Main.storyboard */; };
@@ -26,7 +25,6 @@
 		832D69AE2288848B00C28ECA /* LocaisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisModel.swift; sourceTree = "<group>"; };
 		8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCellTableViewCell.swift; sourceTree = "<group>"; };
 		8361F07622878AC300C582B8 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		8361F07822878FF500C582B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		837BA5E722909A7C002EAEF3 /* Local.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Local.swift; sourceTree = "<group>"; };
 		83865D56228782580014D65B /* test tabela.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test tabela.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83865D59228782580014D65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 		83865D4D228782580014D65B = {
 			isa = PBXGroup;
 			children = (
-				8361F07822878FF500C582B8 /* Default-568h@2x.png */,
 				83865D58228782580014D65B /* test tabela */,
 				83865D57228782580014D65B /* Products */,
 				0A708E65F5E587958D320870 /* Pods */,
@@ -212,7 +209,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83865D642287825A0014D65B /* LaunchScreen.storyboard in Resources */,
-				8361F07922878FF500C582B8 /* Default-568h@2x.png in Resources */,
 				83865D612287825A0014D65B /* Assets.xcassets in Resources */,
 				83865D5F228782580014D65B /* Main.storyboard in Resources */,
 			);
@@ -426,6 +422,7 @@
 			baseConfigurationReference = EFF77D3C36E7E04C977938D7 /* Pods-test tabela.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "test tabela/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -444,6 +441,7 @@
 			baseConfigurationReference = A7A38421D888100F43D6D181 /* Pods-test tabela.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "test tabela/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
