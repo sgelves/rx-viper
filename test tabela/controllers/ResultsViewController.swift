@@ -48,7 +48,26 @@ CLLocationManagerDelegate, LocaisModel {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultCell", for: indexPath) as! ResultCellTableViewCell
         let result = resultData[indexPath.row]
-        cell.title.text = result.placeName
+        
+        var distance: String
+        if result.distance < 1 {
+            distance = String(format: "%3d mts", Int(result.distance))
+        } else {
+            distance = String(format: "%.1f km", result.distance)
+        }
+        if (result.placeCategoryName != nil && !result.placeCategoryName!.isEmpty) {
+            cell.title.text = "\(distance) | \(result.placeCategoryName!)"
+        } else {
+            cell.title.text = "\(distance)"
+        }
+        
+        cell.name.text = result.placeName
+        
+        if result.ratingAverage != nil {
+            cell.starsLabel.text = String(format: "%.1f", result.ratingAverage!)
+        } else {
+            cell.starsView.isHidden = true
+        }
         
         if (result.placePhoto != nil) {
             cell.thumbnail.kf.setImage(with: URL(string: result.placePhoto!), options: [.diskCacheExpiration(.days(9))])
@@ -141,7 +160,7 @@ CLLocationManagerDelegate, LocaisModel {
     }
     
     /*
-        Tell the user that there were ane error while getting his location.
+        Tell the user that there were an error while getting his location.
      */
     func errorUserCoordinateMessage () {
         
@@ -165,6 +184,9 @@ CLLocationManagerDelegate, LocaisModel {
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
+    /*
+        Restart the model state and query for new data according to the searchString filter
+     */
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         guard self.coordinate != nil else {
             return
@@ -174,12 +196,14 @@ CLLocationManagerDelegate, LocaisModel {
     }
 }
 
+/*
+    Delegates methods for the search bar
+ */
 extension ResultsViewController: UISearchBarDelegate,  UISearchResultsUpdating {
 
     func updateSearchResults(for searchController: UISearchController) {
         if (searchController.searchBar.text!.isEmpty && !self.searchString.isEmpty) {
             // Clear the search filter when the model is not empty
-            print("cleaning search filter")
             filterContentForSearchText(searchController.searchBar.text!)
         }
     }

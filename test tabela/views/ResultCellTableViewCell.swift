@@ -12,6 +12,9 @@ class ResultCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var starsView: UIView!
+    @IBOutlet weak var starsLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
