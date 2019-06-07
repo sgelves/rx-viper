@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		200CC49CC979706F2638785F /* Pods_test_tabela.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68F3B1D37D23D5383B5BDEB2 /* Pods_test_tabela.framework */; };
+		49055F0B22A9FFB8004CFCAB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F0A22A9FFB8004CFCAB /* Coordinator.swift */; };
+		49055F0F22AA5F2B004CFCAB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F0E22AA5F2B004CFCAB /* Storyboarded.swift */; };
+		49055F1122AA62C2004CFCAB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F1022AA62C2004CFCAB /* MainCoordinator.swift */; };
 		832C57F92287AE7F00A89316 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C57F82287AE7F00A89316 /* ResultsService.swift */; };
 		832D69AF2288848B00C28ECA /* LocaisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832D69AE2288848B00C28ECA /* LocaisModel.swift */; };
 		8361F073228788E700C582B8 /* ResultCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		49055F0A22A9FFB8004CFCAB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		49055F0E22AA5F2B004CFCAB /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		49055F1022AA62C2004CFCAB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		68F3B1D37D23D5383B5BDEB2 /* Pods_test_tabela.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_test_tabela.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		832C57F82287AE7F00A89316 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
 		832D69AE2288848B00C28ECA /* LocaisModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaisModel.swift; sourceTree = "<group>"; };
@@ -55,6 +61,15 @@
 				A7A38421D888100F43D6D181 /* Pods-test tabela.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		49055F0922A9FF90004CFCAB /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				49055F0A22A9FFB8004CFCAB /* Coordinator.swift */,
+				49055F1022AA62C2004CFCAB /* MainCoordinator.swift */,
+			);
+			path = coordinator;
 			sourceTree = "<group>";
 		};
 		832C57F72287ADF200A89316 /* services */ = {
@@ -136,6 +151,8 @@
 		83CCE8E62291B45E0028EB6C /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				49055F0922A9FF90004CFCAB /* coordinator */,
+				49055F0E22AA5F2B004CFCAB /* Storyboarded.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -245,18 +262,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-test tabela/Pods-test tabela-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-test tabela/Pods-test tabela-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-test tabela/Pods-test tabela-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -276,6 +286,9 @@
 				8361F073228788E700C582B8 /* ResultCellTableViewCell.swift in Sources */,
 				83865D5A228782580014D65B /* AppDelegate.swift in Sources */,
 				8361F07722878AC300C582B8 /* ResultsViewController.swift in Sources */,
+				49055F0B22A9FFB8004CFCAB /* Coordinator.swift in Sources */,
+				49055F1122AA62C2004CFCAB /* MainCoordinator.swift in Sources */,
+				49055F0F22AA5F2B004CFCAB /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

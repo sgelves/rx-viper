@@ -12,7 +12,7 @@ import CoreLocation
 
 class ResultsViewController: UIViewController,
 UITableViewDataSource, UITableViewDelegate,
-CLLocationManagerDelegate, LocaisModel {
+CLLocationManagerDelegate, Storyboarded, LocaisModel {
     
     @IBOutlet weak var tableView: UITableView!
 
