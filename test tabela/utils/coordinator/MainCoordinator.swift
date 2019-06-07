@@ -17,6 +17,13 @@ class MainCoordinator: Coordinator {
     
     func start() {
         let vc = ResultsViewController.instantiate()
+        vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func showLocal() {
+        let vc = LocalViewController.instantiate()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
 }

@@ -139,6 +139,33 @@
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="184.82142857142856"/>
         </scene>
+        <!--Local View Controller-->
+        <scene sceneID="aKw-5R-nIh">
+            <objects>
+                <viewController storyboardIdentifier="LocalViewController" id="Bhm-Tu-Hma" customClass="LocalViewController" customModule="test_tabela" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jRK-iy-FwU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funcionou o coordinator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppr-MZ-5Aj">
+                                <rect key="frame" x="113.5" y="442.5" width="187" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="centerX" secondItem="nFP-hF-Ai1" secondAttribute="centerX" id="CX3-cQ-Je8"/>
+                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="centerY" secondItem="nFP-hF-Ai1" secondAttribute="centerY" id="QN8-6z-Qv9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nFP-hF-Ai1"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8AW-v5-yeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="953.62318840579712" y="184.82142857142856"/>
+        </scene>
     </scenes>
     <resources>
         <image name="location" width="256" height="256"/>

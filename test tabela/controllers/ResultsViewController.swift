@@ -29,6 +29,8 @@ CLLocationManagerDelegate, Storyboarded, LocaisModel {
     
     var searchController : UISearchController! = UISearchController(searchResultsController: nil)
     
+    weak var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.requestLocation()
@@ -193,6 +195,10 @@ CLLocationManagerDelegate, Storyboarded, LocaisModel {
         }
         self.startLocaisState(latitude: self.coordinate!.latitude, longitude: self.coordinate!.longitude, searchString: searchText)
         loadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.showLocal()
     }
 }
 
