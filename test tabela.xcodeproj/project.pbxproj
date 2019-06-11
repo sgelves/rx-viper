@@ -128,6 +128,7 @@
 		83865D58228782580014D65B /* test tabela */ = {
 			isa = PBXGroup;
 			children = (
+				49055F0922A9FF90004CFCAB /* coordinator */,
 				83CCE8E62291B45E0028EB6C /* utils */,
 				8361F071228788B400C582B8 /* views */,
 				832D69AD2288846D00C28ECA /* models */,
@@ -154,7 +155,6 @@
 		83CCE8E62291B45E0028EB6C /* utils */ = {
 			isa = PBXGroup;
 			children = (
-				49055F0922A9FF90004CFCAB /* coordinator */,
 				49055F0E22AA5F2B004CFCAB /* Storyboarded.swift */,
 			);
 			path = utils;
