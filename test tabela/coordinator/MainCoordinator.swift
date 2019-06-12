@@ -16,9 +16,9 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        let vc = ResultsViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: false)
+        let child = PlacesCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.start()
     }
     
     func showLocal() {

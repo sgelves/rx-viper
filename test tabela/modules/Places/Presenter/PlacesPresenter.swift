@@ -10,7 +10,7 @@ class PlacesPresenter: PlacesModuleInput, PlacesViewOutput, PlacesInteractorOutp
 
     weak var view: PlacesViewInput!
     var interactor: PlacesInteractorInput!
-    var router: PlacesRouterInput!
+    var router: PlacesCoordinatorInput!
 
     func viewIsReady() {
 

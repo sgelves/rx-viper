@@ -29,7 +29,7 @@ CLLocationManagerDelegate, Storyboarded, LocaisModel {
     
     var searchController : UISearchController! = UISearchController(searchResultsController: nil)
     
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: PlacesCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -198,7 +198,7 @@ CLLocationManagerDelegate, Storyboarded, LocaisModel {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.showLocal()
+        // coordinator?.showLocal()
     }
 }
 
