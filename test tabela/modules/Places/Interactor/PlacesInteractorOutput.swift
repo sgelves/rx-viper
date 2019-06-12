@@ -9,5 +9,7 @@
 import Foundation
 
 protocol PlacesInteractorOutput: class {
+    
+    func setNextPlacesPage(data: [Local])
 
 }

@@ -13,18 +13,14 @@ class PlacesCoordinator: PlacesCoordinatorInput {
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     weak var parentCoordinator: MainCoordinator?
-    
-    init() {
-        self.navigationController = UINavigationController()
-    }
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        let vc = ResultsViewController.instantiate()
-        vc.coordinator = self
+        let vc = PlacesViewController.instantiate()
+        configure(viewController: vc)
         navigationController.pushViewController(vc, animated: false)
     }
 }
@@ -33,7 +29,7 @@ extension PlacesCoordinator {
     
     private func configure(viewController: PlacesViewController) {
         
-        let router = PlacesCoordinator()
+        let router = PlacesCoordinator(navigationController: self.navigationController)
         
         let presenter = PlacesPresenter()
         presenter.view = viewController
@@ -44,6 +40,7 @@ extension PlacesCoordinator {
         
         presenter.interactor = interactor
         viewController.output = presenter
+        
     }
     
 }

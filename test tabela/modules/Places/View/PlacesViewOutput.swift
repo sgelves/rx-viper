@@ -12,6 +12,7 @@ protocol PlacesViewOutput {
         @author Sergio
         Notify presenter that view is ready
     */
-
     func viewIsReady()
+    func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String)
+    func loadMoreData()
 }

@@ -18,6 +18,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let child = PlacesCoordinator(navigationController: navigationController)
         childCoordinators.append(child)
+        child.parentCoordinator = self
         child.start()
     }
     

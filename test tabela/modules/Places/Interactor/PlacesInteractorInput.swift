@@ -9,5 +9,8 @@
 import Foundation
 
 protocol PlacesInteractorInput {
-
+    
+    func getNextPlacesPage()
+    func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String)
+    
 }
