@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 import CoreLocation
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, PlacesViewInput, Storyboarded, CLLocationManagerDelegate  {
@@ -94,7 +95,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
      */
     func setUserCoordinate (coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
-        
+
         self.output.initialUserDataCollected(latitude: coordinate.latitude, longitude: coordinate.longitude, searchString: "")
     }
     

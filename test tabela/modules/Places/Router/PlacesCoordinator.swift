@@ -23,9 +23,6 @@ class PlacesCoordinator: PlacesCoordinatorInput {
         configure(viewController: vc)
         navigationController.pushViewController(vc, animated: false)
     }
-}
-
-extension PlacesCoordinator {
     
     private func configure(viewController: PlacesViewController) {
         
