@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LocaisModel: NSObject {
+protocol InfinitePlacesListModel: NSObject {
     
     var resultData: [ Local] { get set }
     var currentPage: Int { get set }
@@ -19,7 +19,7 @@ protocol LocaisModel: NSObject {
     
 }
 
-extension LocaisModel {
+extension InfinitePlacesListModel {
     
     func getNextPage(completionHandler: @escaping () -> Void) {
         if (self.isFetchingLoais || self.currentPage < 0) {

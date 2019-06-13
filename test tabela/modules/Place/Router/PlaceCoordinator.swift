@@ -1,26 +1,33 @@
 //
-//  PlacesCoordinator.swift
-//  test tabela
+//  PlacePlaceRouter.swift
+//  test-features-swift
 //
-//  Created by Sergio Gelves on 6/11/19.
+//  Created by Sergio on 12/06/2019.
 //  Copyright © 2019 sgelves. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-class PlacesCoordinator: PlacesCoordinatorInput {
+class PlaceCoordinator: PlaceCoordinatorInput {
+    
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
     weak var parentCoordinator: MainCoordinator?
-
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        let vc = PlacesViewController.instantiate()
+        let vc = PlaceViewController.instantiate()
         configure(viewController: vc)
+        navigationController.pushViewController(vc, animated: false)
+    }
+    
+    func showPlace(place: Local) {
+        let vc = PlaceViewController.instantiate()
+        configure(viewController: vc, place: place)
         navigationController.pushViewController(vc, animated: false)
     }
     
@@ -28,24 +35,20 @@ class PlacesCoordinator: PlacesCoordinatorInput {
         parentCoordinator?.childDidFinish(self)
     }
     
-    func showNext(place: Local) {
-        parentCoordinator?.showPlace(place: place)
-    }
-    
-    private func configure(viewController: PlacesViewController) {
+    private func configure(viewController: PlaceViewController, place: Local? = nil) {
         
         let router = self
         
-        let presenter = PlacesPresenter()
+        let presenter = PlacePresenter()
         presenter.view = viewController
         presenter.router = router
         
-        let interactor = PlacesInteractor()
+        let interactor = PlaceInteractor(place: place)
         interactor.output = presenter
         
         presenter.interactor = interactor
         viewController.output = presenter
-        
     }
-    
+
+
 }

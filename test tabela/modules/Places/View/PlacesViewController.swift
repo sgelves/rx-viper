@@ -143,6 +143,11 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let place = data[indexPath.row]
+        output.userSelectedPlace(place: place)
+    }
+    
     /*
      Infinite scroll functionality
      */

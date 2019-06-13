@@ -9,5 +9,7 @@
 import Foundation
 
 protocol PlaceInteractorInput {
-
+    
+    func getPlace () -> Local?
+    
 }

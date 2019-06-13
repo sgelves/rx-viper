@@ -8,9 +8,13 @@
 
 import UIKit
 
-class PlaceViewController: UIViewController, PlaceViewInput {
-
+class PlaceViewController: UIViewController, Storyboarded, PlaceViewInput {
+    
+    @IBOutlet weak var titleLAbel: UILabel!
+    @IBOutlet weak var descriptionLAbel: UILabel!
+    
     var output: PlaceViewOutput!
+    var place: Local?
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -18,8 +22,10 @@ class PlaceViewController: UIViewController, PlaceViewInput {
         output.viewIsReady()
     }
 
-
     // MARK: PlaceViewInput
-    func setupInitialState() {
+    func setupInitialState(place: Local?) {
+        self.place = place
+        titleLAbel.text = place?.placeName
+        descriptionLAbel.text = place?.addres
     }
 }

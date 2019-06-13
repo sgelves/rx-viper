@@ -10,4 +10,7 @@ import Foundation
 
 protocol PlacesCoordinatorInput: Coordinator {
     
+    func childDidFinish()
+    func showNext(place: Local)
+    
 }

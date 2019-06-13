@@ -7,7 +7,16 @@
 //
 
 class PlaceInteractor: PlaceInteractorInput {
-
+    
     weak var output: PlaceInteractorOutput!
-
+    private var place: Local?
+    
+    init(place: Local?) {
+        self.place = place
+    }
+    
+    func getPlace () -> Local? {
+        return self.place
+    }
+    
 }

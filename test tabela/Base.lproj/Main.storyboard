@@ -10,16 +10,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Local View Controller-->
+        <!--Place View Controller-->
         <scene sceneID="aKw-5R-nIh">
             <objects>
-                <viewController storyboardIdentifier="LocalViewController" id="Bhm-Tu-Hma" customClass="LocalViewController" customModule="test_tabela" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlaceViewController" id="Bhm-Tu-Hma" customClass="PlaceViewController" customModule="test_tabela" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jRK-iy-FwU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funcionou o coordinator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppr-MZ-5Aj">
-                                <rect key="frame" x="113.5" y="442.5" width="187" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ixa-Yq-RbA">
+                                <rect key="frame" x="57" y="303" width="300" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="0u4-BI-nnX"/>
+                                    <constraint firstAttribute="width" constant="300" id="KbE-29-rzH"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ppr-MZ-5Aj">
+                                <rect key="frame" x="10" y="303" width="394" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="desciption" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z8T-AO-Qrr">
+                                <rect key="frame" x="10" y="442.5" width="394" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -27,15 +41,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="centerX" secondItem="nFP-hF-Ai1" secondAttribute="centerX" id="CX3-cQ-Je8"/>
-                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="centerY" secondItem="nFP-hF-Ai1" secondAttribute="centerY" id="QN8-6z-Qv9"/>
+                            <constraint firstItem="nFP-hF-Ai1" firstAttribute="trailing" secondItem="Ppr-MZ-5Aj" secondAttribute="trailing" constant="10" id="0xk-d9-7cv"/>
+                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="top" secondItem="Ixa-Yq-RbA" secondAttribute="top" id="20P-ZO-XDT"/>
+                            <constraint firstItem="nFP-hF-Ai1" firstAttribute="trailing" secondItem="z8T-AO-Qrr" secondAttribute="trailing" constant="10" id="Rd5-mx-pvB"/>
+                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="centerX" secondItem="Ixa-Yq-RbA" secondAttribute="centerX" id="VNP-jD-WhT"/>
+                            <constraint firstItem="z8T-AO-Qrr" firstAttribute="centerX" secondItem="nFP-hF-Ai1" secondAttribute="centerX" id="VVl-wT-D16"/>
+                            <constraint firstItem="Ppr-MZ-5Aj" firstAttribute="leading" secondItem="nFP-hF-Ai1" secondAttribute="leading" constant="10" id="Xr3-nH-v7l"/>
+                            <constraint firstItem="Ixa-Yq-RbA" firstAttribute="centerY" secondItem="nFP-hF-Ai1" secondAttribute="centerY" id="ao4-Ul-CWT"/>
+                            <constraint firstItem="Ixa-Yq-RbA" firstAttribute="centerX" secondItem="nFP-hF-Ai1" secondAttribute="centerX" id="nnG-DJ-uVd"/>
+                            <constraint firstItem="z8T-AO-Qrr" firstAttribute="leading" secondItem="nFP-hF-Ai1" secondAttribute="leading" constant="10" id="qys-vg-Yr1"/>
+                            <constraint firstItem="z8T-AO-Qrr" firstAttribute="centerY" secondItem="nFP-hF-Ai1" secondAttribute="centerY" id="u0K-Zp-TyP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nFP-hF-Ai1"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLAbel" destination="z8T-AO-Qrr" id="PvX-gX-4x3"/>
+                        <outlet property="titleLAbel" destination="Ppr-MZ-5Aj" id="OUe-6a-mhC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8AW-v5-yeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="284" y="185"/>
+            <point key="canvasLocation" x="282.60869565217394" y="184.82142857142856"/>
         </scene>
         <!--Resultados-->
         <scene sceneID="OCX-Zi-6tt">

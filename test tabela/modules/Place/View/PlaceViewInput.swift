@@ -13,5 +13,5 @@ protocol PlaceViewInput: class {
         Setup initial state of the view
     */
 
-    func setupInitialState()
+    func setupInitialState(place: Local?)
 }

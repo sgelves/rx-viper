@@ -15,4 +15,6 @@ protocol PlacesViewOutput {
     func viewIsReady()
     func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String)
     func loadMoreData()
+    func userSelectedPlace(place: Local)
+    func viewDidFinish()
 }

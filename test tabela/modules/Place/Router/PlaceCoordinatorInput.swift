@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol PlaceRouterInput {
+protocol PlaceCoordinatorInput: Coordinator {
+    
+    func childDidFinish()
 
 }

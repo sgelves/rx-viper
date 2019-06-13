@@ -10,9 +10,10 @@ class PlacePresenter: PlaceModuleInput, PlaceViewOutput, PlaceInteractorOutput {
 
     weak var view: PlaceViewInput!
     var interactor: PlaceInteractorInput!
-    var router: PlaceRouterInput!
+    var router: PlaceCoordinatorInput!
 
     func viewIsReady() {
-
+        let place = interactor.getPlace()
+        view.setupInitialState(place: place)
     }
 }

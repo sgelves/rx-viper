@@ -21,21 +21,19 @@
 		49055F0B22A9FFB8004CFCAB /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F0A22A9FFB8004CFCAB /* Coordinator.swift */; };
 		49055F0F22AA5F2B004CFCAB /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F0E22AA5F2B004CFCAB /* Storyboarded.swift */; };
 		49055F1122AA62C2004CFCAB /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F1022AA62C2004CFCAB /* MainCoordinator.swift */; };
-		49055F1322AA69B3004CFCAB /* LocalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49055F1222AA69B3004CFCAB /* LocalViewController.swift */; };
 		494A6CB222B03F52005DC174 /* tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494A6CB122B03F52005DC174 /* tests.swift */; };
 		494A6CBC22B059E2005DC174 /* PlacesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494A6CBB22B059E2005DC174 /* PlacesCoordinator.swift */; };
 		494A6CBE22B05AD8005DC174 /* PlacesCoordinatorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494A6CBD22B05AD8005DC174 /* PlacesCoordinatorInput.swift */; };
 		4B6FE59BE1415146299C713D /* PlacesViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088B40E794DE92057B6DDB9A /* PlacesViewTests.swift */; };
 		50B045851E7DF24F0FF60FEF /* PlaceConfiguratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02DB23C3DF45BB48C749B72 /* PlaceConfiguratorTests.swift */; };
 		51389718535F99603B285ABC /* PlacesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB90A58485CD1E38133419A2 /* PlacesModuleInput.swift */; };
-		57324FF11640048558A274CC /* PlaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE725A38C088AFE1BCECA661 /* PlaceRouter.swift */; };
+		57324FF11640048558A274CC /* PlaceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE725A38C088AFE1BCECA661 /* PlaceCoordinator.swift */; };
 		5B313515CA0958791898F8FC /* PlacesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78209C4CEC4CC6A2EC73518 /* PlacesPresenter.swift */; };
 		5F1A2CD7AD09B564BD7E2DDF /* PlacesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9BB87F5FB0DC038069498 /* PlacesInteractorOutput.swift */; };
 		5F24673267802CA5E7331C27 /* PlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1A0D65FB1FDBE3A7D25BA /* PlaceInteractor.swift */; };
-		730577C2CAD9C892B20EF93B /* PlaceInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B83AAC69FC0B726EC831AAD /* PlaceInitializer.swift */; };
 		79A4C4F38C75605FF0058A9D /* PlacesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5909CCDDDE3F24EF29EEBC /* PlacesRouterTests.swift */; };
 		7C4C813FE67A581B8A4CFA31 /* PlacesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388E340708026EE7CC0808E /* PlacesPresenterTests.swift */; };
-		7C7F1ED6985FBBA1E7641A56 /* PlaceRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E888A02E0B350440699A02 /* PlaceRouterInput.swift */; };
+		7C7F1ED6985FBBA1E7641A56 /* PlaceCoordinatorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E888A02E0B350440699A02 /* PlaceCoordinatorInput.swift */; };
 		832C57F92287AE7F00A89316 /* ResultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832C57F82287AE7F00A89316 /* ResultsService.swift */; };
 		832D69AF2288848B00C28ECA /* LocaisModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832D69AE2288848B00C28ECA /* LocaisModel.swift */; };
 		8361F073228788E700C582B8 /* ResultCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */; };
@@ -46,7 +44,6 @@
 		83865D642287825A0014D65B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83865D622287825A0014D65B /* LaunchScreen.storyboard */; };
 		A667B7BF2725331D0ACD1154 /* PlaceInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B982810ED775ED37142C03E /* PlaceInteractorInput.swift */; };
 		AA61EF91CF614D7BE09008A0 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E9DB636B8A8BDB95F01CAA /* PlaceViewController.swift */; };
-		AC7E7C0F9A6BC8E74CD789B2 /* PlaceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADAE0D25CF12B4A9B2A890A /* PlaceConfigurator.swift */; };
 		BF03264A4FD95464B9C87E93 /* PlaceInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E623C67680F5363553CDD61 /* PlaceInteractorOutput.swift */; };
 		C1D41FF8256043F77AEF4BE7 /* PlacesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141269DF52692A9C72A67A8 /* PlacesViewOutput.swift */; };
 		C948C7DF27A7BF0880B78ECC /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F53FBD56231B17CE03E99E /* PlacesViewController.swift */; };
@@ -71,7 +68,6 @@
 		49055F0A22A9FFB8004CFCAB /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		49055F0E22AA5F2B004CFCAB /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		49055F1022AA62C2004CFCAB /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		49055F1222AA69B3004CFCAB /* LocalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalViewController.swift; sourceTree = "<group>"; };
 		494A6CAF22B03F52005DC174 /* tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		494A6CB122B03F52005DC174 /* tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tests.swift; sourceTree = "<group>"; };
 		494A6CB322B03F52005DC174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,7 +79,6 @@
 		73913278F7913D6FDD5646A5 /* PlacesInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesInteractor.swift; sourceTree = "<group>"; };
 		79E7A9C0912F7E0F22FF9F1A /* PlaceModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceModuleInput.swift; sourceTree = "<group>"; };
 		7B470972C77D450B0AE37DF8 /* PlaceRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceRouterTests.swift; sourceTree = "<group>"; };
-		7B83AAC69FC0B726EC831AAD /* PlaceInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceInitializer.swift; sourceTree = "<group>"; };
 		8141269DF52692A9C72A67A8 /* PlacesViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesViewOutput.swift; sourceTree = "<group>"; };
 		8185535EEEAFCF5A482F7178 /* PlaceViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceViewTests.swift; sourceTree = "<group>"; };
 		832C57F82287AE7F00A89316 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
@@ -98,14 +93,13 @@
 		83865D652287825A0014D65B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		85A25C4F2A6C3176A00D3B05 /* PlacesInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesInteractorInput.swift; sourceTree = "<group>"; };
 		8A5909CCDDDE3F24EF29EEBC /* PlacesRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesRouterTests.swift; sourceTree = "<group>"; };
-		8ADAE0D25CF12B4A9B2A890A /* PlaceConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceConfigurator.swift; sourceTree = "<group>"; };
 		8B982810ED775ED37142C03E /* PlaceInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceInteractorInput.swift; sourceTree = "<group>"; };
 		8D815E4F68398E15A4DADDB3 /* PlacesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesViewInput.swift; sourceTree = "<group>"; };
 		A4F53FBD56231B17CE03E99E /* PlacesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		A7A38421D888100F43D6D181 /* Pods-test tabela.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test tabela.release.xcconfig"; path = "Target Support Files/Pods-test tabela/Pods-test tabela.release.xcconfig"; sourceTree = "<group>"; };
 		B9F1A0D65FB1FDBE3A7D25BA /* PlaceInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceInteractor.swift; sourceTree = "<group>"; };
 		C02DB23C3DF45BB48C749B72 /* PlaceConfiguratorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceConfiguratorTests.swift; sourceTree = "<group>"; };
-		C0E888A02E0B350440699A02 /* PlaceRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceRouterInput.swift; sourceTree = "<group>"; };
+		C0E888A02E0B350440699A02 /* PlaceCoordinatorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceCoordinatorInput.swift; sourceTree = "<group>"; };
 		C542E325B6F51B5592ED17A5 /* PlacePresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacePresenter.swift; sourceTree = "<group>"; };
 		C92C98086E34EDE04DB4D182 /* PlaceInteractorTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceInteractorTests.swift; sourceTree = "<group>"; };
 		D388E340708026EE7CC0808E /* PlacesPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesPresenterTests.swift; sourceTree = "<group>"; };
@@ -113,7 +107,7 @@
 		E2E9DB636B8A8BDB95F01CAA /* PlaceViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
 		E4E9BB87F5FB0DC038069498 /* PlacesInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesInteractorOutput.swift; sourceTree = "<group>"; };
 		EB90A58485CD1E38133419A2 /* PlacesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesModuleInput.swift; sourceTree = "<group>"; };
-		EE725A38C088AFE1BCECA661 /* PlaceRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceRouter.swift; sourceTree = "<group>"; };
+		EE725A38C088AFE1BCECA661 /* PlaceCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceCoordinator.swift; sourceTree = "<group>"; };
 		EFF77D3C36E7E04C977938D7 /* Pods-test tabela.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test tabela.debug.xcconfig"; path = "Target Support Files/Pods-test tabela/Pods-test tabela.debug.xcconfig"; sourceTree = "<group>"; };
 		F06CDF92116927878B4D5F3D /* PlaceViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceViewInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +151,7 @@
 		17FAACB9AB11552956BCF5C6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				832D69AD2288846D00C28ECA /* DataModels */,
 				85A25C4F2A6C3176A00D3B05 /* PlacesInteractorInput.swift */,
 				E4E9BB87F5FB0DC038069498 /* PlacesInteractorOutput.swift */,
 				73913278F7913D6FDD5646A5 /* PlacesInteractor.swift */,
@@ -185,8 +180,8 @@
 		38B28179825BEB28F7A6A733 /* Router */ = {
 			isa = PBXGroup;
 			children = (
-				C0E888A02E0B350440699A02 /* PlaceRouterInput.swift */,
-				EE725A38C088AFE1BCECA661 /* PlaceRouter.swift */,
+				C0E888A02E0B350440699A02 /* PlaceCoordinatorInput.swift */,
+				EE725A38C088AFE1BCECA661 /* PlaceCoordinator.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -215,7 +210,6 @@
 				F97C7FF80E292CC24A019865 /* Presenter */,
 				612074EA4F3CE3A664AE9424 /* Interactor */,
 				38B28179825BEB28F7A6A733 /* Router */,
-				E5FE30FBFAE6F19B64C3A558 /* Configurator */,
 			);
 			path = Place;
 			sourceTree = "<group>";
@@ -290,21 +284,20 @@
 			path = services;
 			sourceTree = "<group>";
 		};
-		832D69AD2288846D00C28ECA /* models */ = {
+		832D69AD2288846D00C28ECA /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
-				837BA5E622909A33002EAEF3 /* entities */,
 				832D69AE2288848B00C28ECA /* LocaisModel.swift */,
 			);
-			path = models;
+			path = DataModels;
 			sourceTree = "<group>";
 		};
-		837BA5E622909A33002EAEF3 /* entities */ = {
+		837BA5E622909A33002EAEF3 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
 				837BA5E722909A7C002EAEF3 /* Local.swift */,
 			);
-			path = entities;
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		83865D4D228782580014D65B = {
@@ -332,25 +325,15 @@
 			children = (
 				49055F0922A9FF90004CFCAB /* coordinator */,
 				83CCE8E62291B45E0028EB6C /* utils */,
-				832D69AD2288846D00C28ECA /* models */,
 				832C57F72287ADF200A89316 /* services */,
-				83865D6B228784E00014D65B /* controllers */,
+				3FD1B2671368D46DE1A780F8 /* modules */,
 				83865D59228782580014D65B /* AppDelegate.swift */,
 				83865D5D228782580014D65B /* Main.storyboard */,
 				83865D602287825A0014D65B /* Assets.xcassets */,
 				83865D622287825A0014D65B /* LaunchScreen.storyboard */,
 				83865D652287825A0014D65B /* Info.plist */,
-				3FD1B2671368D46DE1A780F8 /* modules */,
 			);
 			path = "test tabela";
-			sourceTree = "<group>";
-		};
-		83865D6B228784E00014D65B /* controllers */ = {
-			isa = PBXGroup;
-			children = (
-				49055F1222AA69B3004CFCAB /* LocalViewController.swift */,
-			);
-			path = controllers;
 			sourceTree = "<group>";
 		};
 		83CCE8E62291B45E0028EB6C /* utils */ = {
@@ -414,20 +397,12 @@
 			isa = PBXGroup;
 			children = (
 				4F712F75800CCD36952A4FCD /* View */,
-				65E0C0BFE922C3B651B6F3FA /* Presenter */,
 				17FAACB9AB11552956BCF5C6 /* Interactor */,
+				65E0C0BFE922C3B651B6F3FA /* Presenter */,
+				837BA5E622909A33002EAEF3 /* Entity */,
 				99A934C202AFF4355FC9389C /* Router */,
 			);
 			path = Places;
-			sourceTree = "<group>";
-		};
-		E5FE30FBFAE6F19B64C3A558 /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				8ADAE0D25CF12B4A9B2A890A /* PlaceConfigurator.swift */,
-				7B83AAC69FC0B726EC831AAD /* PlaceInitializer.swift */,
-			);
-			path = Configurator;
 			sourceTree = "<group>";
 		};
 		E8AC61ABD553B16A50B10E50 /* View */ = {
@@ -628,7 +603,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49055F1322AA69B3004CFCAB /* LocalViewController.swift in Sources */,
 				832D69AF2288848B00C28ECA /* LocaisModel.swift in Sources */,
 				837BA5E822909A7C002EAEF3 /* Local.swift in Sources */,
 				832C57F92287AE7F00A89316 /* ResultsService.swift in Sources */,
@@ -655,10 +629,8 @@
 				A667B7BF2725331D0ACD1154 /* PlaceInteractorInput.swift in Sources */,
 				BF03264A4FD95464B9C87E93 /* PlaceInteractorOutput.swift in Sources */,
 				5F24673267802CA5E7331C27 /* PlaceInteractor.swift in Sources */,
-				7C7F1ED6985FBBA1E7641A56 /* PlaceRouterInput.swift in Sources */,
-				57324FF11640048558A274CC /* PlaceRouter.swift in Sources */,
-				AC7E7C0F9A6BC8E74CD789B2 /* PlaceConfigurator.swift in Sources */,
-				730577C2CAD9C892B20EF93B /* PlaceInitializer.swift in Sources */,
+				7C7F1ED6985FBBA1E7641A56 /* PlaceCoordinatorInput.swift in Sources */,
+				57324FF11640048558A274CC /* PlaceCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

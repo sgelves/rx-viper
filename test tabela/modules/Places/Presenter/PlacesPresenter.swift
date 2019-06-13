@@ -7,8 +7,6 @@
 //
 
 class PlacesPresenter: PlacesModuleInput, PlacesViewOutput, PlacesInteractorOutput {
-    
-    
 
     weak var view: PlacesViewInput!
     var interactor: PlacesInteractorInput!
@@ -29,5 +27,13 @@ class PlacesPresenter: PlacesModuleInput, PlacesViewOutput, PlacesInteractorOutp
     
     func loadMoreData() {
         interactor.getNextPlacesPage()
+    }
+    
+    func userSelectedPlace(place: Local) {
+        router.showNext(place: place)
+    }
+    
+    func viewDidFinish() {
+        router.childDidFinish()
     }
 }

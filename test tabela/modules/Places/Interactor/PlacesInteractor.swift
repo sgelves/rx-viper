@@ -8,7 +8,7 @@
 
 import Foundation
 
-class PlacesInteractor: NSObject, PlacesInteractorInput, LocaisModel {
+class PlacesInteractor: NSObject, PlacesInteractorInput, InfinitePlacesListModel {
 
     weak var output: PlacesInteractorOutput!
     

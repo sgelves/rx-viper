@@ -22,9 +22,19 @@ class MainCoordinator: Coordinator {
         child.start()
     }
     
-    func showLocal() {
-        let vc = LocalViewController.instantiate()
-        vc.coordinator = self
-        navigationController.pushViewController(vc, animated: true)
+    func showPlace(place: Local) {
+        let child = PlaceCoordinator(navigationController: navigationController)
+        childCoordinators.append(child)
+        child.parentCoordinator = self
+        child.showPlace(place: place)
+    }
+    
+    func childDidFinish(_ child: Coordinator?) {
+        for (index, coordinator) in childCoordinators.enumerated() {
+            if coordinator === child {
+                childCoordinators.remove(at: index)
+                break
+            }
+        }
     }
 }
