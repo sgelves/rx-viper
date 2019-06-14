@@ -40,7 +40,7 @@ class PlacesCoordinator: PlacesCoordinatorInput {
         presenter.view = viewController
         presenter.router = router
         
-        let interactor = PlacesInteractor()
+        let interactor = PlacesInteractor(input: presenter)
         
         presenter.interactor = interactor
         viewController.output = presenter

@@ -20,7 +20,7 @@ class PlacesPresenterTest: XCTestCase {
         super.tearDown()
     }
 
-    class MockInteractor: PlacesInteractorInput {
+    class MockInteractor: InteractorToPresenterPlacesProtocol {
 
     }
 

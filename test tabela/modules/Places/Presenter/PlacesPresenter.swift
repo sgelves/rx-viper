@@ -8,15 +8,27 @@
 
 import RxSwift
 
-class PlacesPresenter: PlacesModuleInput, PlacesViewOutput {
+class PlacesPresenter: NSObject, PlacesModuleInput, PlacesViewOutput, PreseToInterPlacesProtocol {
 
     weak var view: PlacesViewInput!
-    var interactor: PlacesInteractorInput!
+    var interactor: InterToPresePlacesProtocol!
     var router: PlacesCoordinatorInput!
     
+    // Observables aimed to interactor
+    var userResetInitialData: PublishSubject<Dictionary<String, Any>>
+    var userRequestedPlacesPage: PublishSubject<Bool>
+    
     let dispose = DisposeBag()
+    
+    override init () {
+        //initialize observables
+        userResetInitialData = PublishSubject<Dictionary>()
+        userRequestedPlacesPage = PublishSubject<Bool>()
+        super.init()
+    }
 
     func viewIsReady() {
+        // create observers
         interactor.placesBehaviorSubject.subscribe({ event in //Sub A added and most recent event replayed ("starting value")
             if event.element != nil {
                 self.view.placesHasChanged(places: event.element!)
@@ -25,8 +37,11 @@ class PlacesPresenter: PlacesModuleInput, PlacesViewOutput {
     }
     
     func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String) {
-        interactor.initialUserDataCollected(latitude: latitude, longitude: longitude, searchString: searchString)
-        interactor.getNextPlacesPage()
+        
+        self.userResetInitialData.on(.next([
+            "latitude": latitude, "longitude": longitude, "searchString": searchString
+            ]))
+        self.userRequestedPlacesPage.on(.next(true))
     }
     
     // TODO deletar
@@ -34,7 +49,7 @@ class PlacesPresenter: PlacesModuleInput, PlacesViewOutput {
     }
     
     func loadMoreData() {
-        interactor.getNextPlacesPage()
+        self.userRequestedPlacesPage.on(.next(true))
     }
     
     func userSelectedPlace(place: Local) {
