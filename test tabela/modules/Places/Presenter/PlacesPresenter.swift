@@ -6,14 +6,22 @@
 //  Copyright © 2019 sgelves. All rights reserved.
 //
 
-class PlacesPresenter: PlacesModuleInput, PlacesViewOutput, PlacesInteractorOutput {
+import RxSwift
+
+class PlacesPresenter: PlacesModuleInput, PlacesViewOutput {
 
     weak var view: PlacesViewInput!
     var interactor: PlacesInteractorInput!
     var router: PlacesCoordinatorInput!
+    
+    let dispose = DisposeBag()
 
     func viewIsReady() {
-        
+        interactor.placesBehaviorSubject.subscribe({ event in //Sub A added and most recent event replayed ("starting value")
+            if event.element != nil {
+                self.view.placesHasChanged(places: event.element!)
+            }
+        }).disposed(by: self.dispose)
     }
     
     func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String) {
@@ -21,8 +29,8 @@ class PlacesPresenter: PlacesModuleInput, PlacesViewOutput, PlacesInteractorOutp
         interactor.getNextPlacesPage()
     }
     
+    // TODO deletar
     func setNextPlacesPage(data: [Local]) {
-        view.placesHasChanged(places: data)
     }
     
     func loadMoreData() {

@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol PlacesInteractorInput {
+    
+    var placesBehaviorSubject: BehaviorSubject<[Local]> { get set }
     
     func getNextPlacesPage()
     func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String)

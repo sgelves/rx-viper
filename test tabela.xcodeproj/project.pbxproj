@@ -30,7 +30,6 @@
 		57324FF11640048558A274CC /* PlaceCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE725A38C088AFE1BCECA661 /* PlaceCoordinator.swift */; };
 		5B313515CA0958791898F8FC /* PlacesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78209C4CEC4CC6A2EC73518 /* PlacesPresenter.swift */; };
 		5DD1BBEC8D309F86D9230071 /* libPods-tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C81B1B2FF4928655CCB7631 /* libPods-tests.a */; };
-		5F1A2CD7AD09B564BD7E2DDF /* PlacesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E9BB87F5FB0DC038069498 /* PlacesInteractorOutput.swift */; };
 		5F24673267802CA5E7331C27 /* PlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1A0D65FB1FDBE3A7D25BA /* PlaceInteractor.swift */; };
 		79A4C4F38C75605FF0058A9D /* PlacesRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5909CCDDDE3F24EF29EEBC /* PlacesRouterTests.swift */; };
 		7C4C813FE67A581B8A4CFA31 /* PlacesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D388E340708026EE7CC0808E /* PlacesPresenterTests.swift */; };
@@ -109,7 +108,6 @@
 		D388E340708026EE7CC0808E /* PlacesPresenterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesPresenterTests.swift; sourceTree = "<group>"; };
 		D78209C4CEC4CC6A2EC73518 /* PlacesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesPresenter.swift; sourceTree = "<group>"; };
 		E2E9DB636B8A8BDB95F01CAA /* PlaceViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceViewController.swift; sourceTree = "<group>"; };
-		E4E9BB87F5FB0DC038069498 /* PlacesInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesInteractorOutput.swift; sourceTree = "<group>"; };
 		EB90A58485CD1E38133419A2 /* PlacesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesModuleInput.swift; sourceTree = "<group>"; };
 		EE725A38C088AFE1BCECA661 /* PlaceCoordinator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceCoordinator.swift; sourceTree = "<group>"; };
 		EFF77D3C36E7E04C977938D7 /* Pods-test tabela.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test tabela.debug.xcconfig"; path = "Target Support Files/Pods-test tabela/Pods-test tabela.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 			children = (
 				832D69AD2288846D00C28ECA /* DataModels */,
 				85A25C4F2A6C3176A00D3B05 /* PlacesInteractorInput.swift */,
-				E4E9BB87F5FB0DC038069498 /* PlacesInteractorOutput.swift */,
 				73913278F7913D6FDD5646A5 /* PlacesInteractor.swift */,
 			);
 			path = Interactor;
@@ -650,7 +647,6 @@
 				51389718535F99603B285ABC /* PlacesModuleInput.swift in Sources */,
 				5B313515CA0958791898F8FC /* PlacesPresenter.swift in Sources */,
 				3A0C179A36C0D165FA636505 /* PlacesInteractorInput.swift in Sources */,
-				5F1A2CD7AD09B564BD7E2DDF /* PlacesInteractorOutput.swift in Sources */,
 				1ACAAA02ED2057E1CE655015 /* PlacesInteractor.swift in Sources */,
 				48DC1DA72515FA69F6422E81 /* PlaceViewInput.swift in Sources */,
 				2C59A82ED56253F0CEE394C8 /* PlaceViewOutput.swift in Sources */,

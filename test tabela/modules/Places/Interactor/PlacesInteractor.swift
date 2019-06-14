@@ -7,26 +7,38 @@
 //
 
 import Foundation
+import RxSwift
 
 class PlacesInteractor: NSObject, PlacesInteractorInput, InfinitePlacesListModel {
-
-    weak var output: PlacesInteractorOutput!
     
     var resultData: [Local] = []
     var currentPage: Int = 0
-    var isFetchingLoais: Bool = false
+    var isFetchingPlaces: Bool = false
+
     var searchString: String = ""
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
+    fileprivate let dispose = DisposeBag()
+    
+    /**
+        Observable Interactor initialization
+     **/
+    var placesBehaviorSubject: BehaviorSubject<[Local]>
+    
+    override init () {
+        self.placesBehaviorSubject = BehaviorSubject<[Local]>(value: resultData)
+        super.init()
+    }
+    
     func getNextPlacesPage() {
         getNextPage {
-            self.output.setNextPlacesPage(data: self.resultData)
+            self.placesBehaviorSubject.on(.next(self.resultData))
         }
     }
     
     func initialUserDataCollected(latitude: Double, longitude: Double, searchString: String) {
-        if (!isFetchingLoais) {
+        if (!isFetchingPlaces) {
             self.latitude = latitude
             self.longitude = longitude
             self.searchString = searchString

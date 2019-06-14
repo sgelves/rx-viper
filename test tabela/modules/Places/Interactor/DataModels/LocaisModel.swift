@@ -15,21 +15,21 @@ protocol InfinitePlacesListModel: NSObject {
     var latitude: Double { get set }
     var longitude: Double { get set }
     var searchString: String { get set }
-    var isFetchingLoais: Bool { get set }
+    var isFetchingPlaces: Bool { get set }
     
 }
 
 extension InfinitePlacesListModel {
     
     func getNextPage(completionHandler: @escaping () -> Void) {
-        if (self.isFetchingLoais || self.currentPage < 0) {
+        if (self.isFetchingPlaces || self.currentPage < 0) {
             return
         }
-        self.isFetchingLoais = true
+        self.isFetchingPlaces = true
         ResultsService.queryResults(page: self.currentPage, latitude: self.latitude,
                                     longitude: self.longitude, searchString: self.searchString) { data in
             guard data != nil else {
-                self.isFetchingLoais = false
+                self.isFetchingPlaces = false
                 return
             }
             
@@ -42,14 +42,14 @@ extension InfinitePlacesListModel {
                 self.currentPage += 1
             }
                                         
-            self.isFetchingLoais = false
+            self.isFetchingPlaces = false
             completionHandler()
         }
         
     }
     
     func startLocaisState(latitude: Double, longitude: Double, searchString: String) {
-        guard !self.isFetchingLoais else {
+        guard !self.isFetchingPlaces else {
             return
         }
         self.resultData = []
