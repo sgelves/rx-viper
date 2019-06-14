@@ -8,11 +8,14 @@
 
 import RxSwift
 
-class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol {
+class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol, PreseToViewPlacesProtocol {
 
     var view: ViewToPresePlacesProtocol!
     var interactor: InterToPresePlacesProtocol!
     var router: PlacesCoordinatorInput!
+    
+    // Observable to view
+    var placesDataChanged = PublishSubject<[Local]>()
     
     // Observables aimed to interactor
     var userResetInitialData: PublishSubject<Dictionary<String, Any>>
@@ -68,7 +71,7 @@ class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol {
         
         self.interactor.placesBehaviorSubject.subscribe({ event in //Sub A added and most recent event replayed ("starting value")
             if event.element != nil {
-                self.view.placesHasChanged(places: event.element!)
+                self.placesDataChanged.on(.next(event.element!))
             }
         }).disposed(by: self.dispose)
     }

@@ -13,6 +13,8 @@ import RxSwift
 import RxCocoa
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewToPresePlacesProtocol, Storyboarded, CLLocationManagerDelegate  {
+    
+    var input: PreseToViewPlacesProtocol!
 
     var data: [Local] = []
     
@@ -30,6 +32,9 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var resetResultData: PublishSubject<Dictionary<String, Any>> = PublishSubject<Dictionary<String, Any>>()
     var selectedPlace: PublishSubject<Local> = PublishSubject<Local>()
     var uiviewDidFinish: PublishSubject<Bool> = PublishSubject<Bool>()
+    
+    
+    fileprivate let dispose = DisposeBag()
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -38,6 +43,14 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         self.createSearhBar()
         
         self.uiviewDidLoad.on(.next(true))
+        
+        // Subscribe to presenter
+        input.placesDataChanged.subscribe({ event in
+            if (event.element != nil) {
+                self.data = event.element!
+                self.tableView.reloadData()
+            }
+        }).disposed(by: dispose)
     }
     
     func createSearhBar() {

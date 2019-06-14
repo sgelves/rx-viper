@@ -20,6 +20,4 @@ protocol ViewToPresePlacesProtocol {
     var selectedPlace: PublishSubject<Local> { get }
     var uiviewDidFinish: PublishSubject<Bool> { get }
     
-    
-    func placesHasChanged(places: [Local])
 }
