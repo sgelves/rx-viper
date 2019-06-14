@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08A0AB798B45E93FF11FE582 /* PlacesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D815E4F68398E15A4DADDB3 /* PlacesViewInput.swift */; };
 		13870B9536C09F81D208EE57 /* PlaceInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92C98086E34EDE04DB4D182 /* PlaceInteractorTests.swift */; };
 		18F6D73053DBCC0C2CC8B640 /* PlaceModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E7A9C0912F7E0F22FF9F1A /* PlaceModuleInput.swift */; };
 		1ACAAA02ED2057E1CE655015 /* PlacesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73913278F7913D6FDD5646A5 /* PlacesInteractor.swift */; };
@@ -46,7 +45,7 @@
 		A667B7BF2725331D0ACD1154 /* PlaceInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B982810ED775ED37142C03E /* PlaceInteractorInput.swift */; };
 		AA61EF91CF614D7BE09008A0 /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E9DB636B8A8BDB95F01CAA /* PlaceViewController.swift */; };
 		BF03264A4FD95464B9C87E93 /* PlaceInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E623C67680F5363553CDD61 /* PlaceInteractorOutput.swift */; };
-		C1D41FF8256043F77AEF4BE7 /* PlacesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141269DF52692A9C72A67A8 /* PlacesViewOutput.swift */; };
+		C1D41FF8256043F77AEF4BE7 /* ViewToPresePlacesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8141269DF52692A9C72A67A8 /* ViewToPresePlacesProtocol.swift */; };
 		C948C7DF27A7BF0880B78ECC /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F53FBD56231B17CE03E99E /* PlacesViewController.swift */; };
 		CF0A6D3ED45E473894A8632F /* PlaceRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B470972C77D450B0AE37DF8 /* PlaceRouterTests.swift */; };
 		D36A26DFA9C4FEC1AFBC6E21 /* PlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C542E325B6F51B5592ED17A5 /* PlacePresenter.swift */; };
@@ -83,7 +82,7 @@
 		73913278F7913D6FDD5646A5 /* PlacesInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesInteractor.swift; sourceTree = "<group>"; };
 		79E7A9C0912F7E0F22FF9F1A /* PlaceModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceModuleInput.swift; sourceTree = "<group>"; };
 		7B470972C77D450B0AE37DF8 /* PlaceRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceRouterTests.swift; sourceTree = "<group>"; };
-		8141269DF52692A9C72A67A8 /* PlacesViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesViewOutput.swift; sourceTree = "<group>"; };
+		8141269DF52692A9C72A67A8 /* ViewToPresePlacesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewToPresePlacesProtocol.swift; sourceTree = "<group>"; };
 		8185535EEEAFCF5A482F7178 /* PlaceViewTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceViewTests.swift; sourceTree = "<group>"; };
 		832C57F82287AE7F00A89316 /* ResultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsService.swift; sourceTree = "<group>"; };
 		832D69AE2288848B00C28ECA /* InfinitePlacesListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfinitePlacesListModel.swift; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 		85A25C4F2A6C3176A00D3B05 /* InterToPresePlacesProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InterToPresePlacesProtocol.swift; sourceTree = "<group>"; };
 		8A5909CCDDDE3F24EF29EEBC /* PlacesRouterTests.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesRouterTests.swift; sourceTree = "<group>"; };
 		8B982810ED775ED37142C03E /* PlaceInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceInteractorInput.swift; sourceTree = "<group>"; };
-		8D815E4F68398E15A4DADDB3 /* PlacesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesViewInput.swift; sourceTree = "<group>"; };
 		A4F53FBD56231B17CE03E99E /* PlacesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
 		A7A38421D888100F43D6D181 /* Pods-test tabela.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-test tabela.release.xcconfig"; path = "Target Support Files/Pods-test tabela/Pods-test tabela.release.xcconfig"; sourceTree = "<group>"; };
 		B9F1A0D65FB1FDBE3A7D25BA /* PlaceInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaceInteractor.swift; sourceTree = "<group>"; };
@@ -256,8 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				8361F072228788E700C582B8 /* ResultCellTableViewCell.swift */,
-				8D815E4F68398E15A4DADDB3 /* PlacesViewInput.swift */,
-				8141269DF52692A9C72A67A8 /* PlacesViewOutput.swift */,
+				8141269DF52692A9C72A67A8 /* ViewToPresePlacesProtocol.swift */,
 				A4F53FBD56231B17CE03E99E /* PlacesViewController.swift */,
 			);
 			path = View;
@@ -644,8 +641,7 @@
 				49055F1122AA62C2004CFCAB /* MainCoordinator.swift in Sources */,
 				49055F0F22AA5F2B004CFCAB /* Storyboarded.swift in Sources */,
 				494A6CBE22B05AD8005DC174 /* PlacesCoordinatorInput.swift in Sources */,
-				08A0AB798B45E93FF11FE582 /* PlacesViewInput.swift in Sources */,
-				C1D41FF8256043F77AEF4BE7 /* PlacesViewOutput.swift in Sources */,
+				C1D41FF8256043F77AEF4BE7 /* ViewToPresePlacesProtocol.swift in Sources */,
 				C948C7DF27A7BF0880B78ECC /* PlacesViewController.swift in Sources */,
 				51389718535F99603B285ABC /* PlacesModuleInput.swift in Sources */,
 				5B313515CA0958791898F8FC /* PlacesPresenter.swift in Sources */,
