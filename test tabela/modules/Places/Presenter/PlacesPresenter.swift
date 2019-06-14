@@ -35,17 +35,17 @@ class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol {
 
     fileprivate func connect() {
         // create observers
-        self.view.loadMoreResultData?.subscribe({ event in
+        self.view.loadMoreResultData.subscribe({ event in
             self.userRequestedPlacesPage.on(.next(true))
         }).disposed(by: dispose)
         
-        self.view.selectedPlace?.subscribe({ event in
+        self.view.selectedPlace.subscribe({ event in
             if (event.element != nil) {
                 self.router.showNext(place: event.element!)
             }
         }).disposed(by: dispose)
         
-        self.view.resetResultData?.subscribe({ event in
+        self.view.resetResultData.subscribe({ event in
             guard event.element != nil else {
                 return
             }
@@ -62,7 +62,7 @@ class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol {
             
         }).disposed(by: dispose)
         
-        self.view.uiviewDidFinish?.subscribe({ event in
+        self.view.uiviewDidFinish.subscribe({ event in
             self.router.childDidFinish()
         }).disposed(by: dispose)
         

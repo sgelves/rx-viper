@@ -26,10 +26,10 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     // Observables for presenter
     var uiviewDidLoad: PublishSubject<Bool> = PublishSubject<Bool>()
-    var loadMoreResultData: PublishSubject<Bool>?
-    var resetResultData: PublishSubject<Dictionary<String, Any>>?
-    var selectedPlace: PublishSubject<Local>?
-    var uiviewDidFinish: PublishSubject<Bool>?
+    var loadMoreResultData: PublishSubject<Bool> = PublishSubject<Bool>()
+    var resetResultData: PublishSubject<Dictionary<String, Any>> = PublishSubject<Dictionary<String, Any>>()
+    var selectedPlace: PublishSubject<Local> = PublishSubject<Local>()
+    var uiviewDidFinish: PublishSubject<Bool> = PublishSubject<Bool>()
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -37,10 +37,6 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         self.requestLocation()
         self.createSearhBar()
         
-        self.resetResultData = PublishSubject<Dictionary<String, Any>>()
-        self.selectedPlace = PublishSubject<Local>()
-        self.uiviewDidFinish = PublishSubject<Bool>()
-        self.loadMoreResultData = PublishSubject<Bool>()
         self.uiviewDidLoad.on(.next(true))
     }
     
@@ -107,10 +103,10 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
      */
     func setUserCoordinate (coordinate: CLLocationCoordinate2D) {
         self.coordinate = coordinate
-        self.resetResultData?.on(.next(
+        self.resetResultData.on(.next(
             ["latitude": coordinate.latitude, "longitude": coordinate.longitude, "searchString": ""]
             ))
-        self.loadMoreResultData?.on(.next(true))
+        self.loadMoreResultData.on(.next(true))
     }
     
     func placesHasChanged(places: [Local]) {
@@ -158,7 +154,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let place = data[indexPath.row]
-        self.selectedPlace?.on(.next(place))
+        self.selectedPlace.on(.next(place))
     }
     
     /*
@@ -169,7 +165,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         let contentHeight = scrollView.contentSize.height
         
         if (offset > contentHeight - scrollView.frame.height * 2) && self.coordinate != nil {
-            self.loadMoreResultData?.on(.next(true))
+            self.loadMoreResultData.on(.next(true))
         }
     }
     
@@ -181,7 +177,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         guard self.coordinate != nil else {
             return
         }
-        self.resetResultData?.on(.next(
+        self.resetResultData.on(.next(
             ["latitude": coordinate!.latitude,
              "longitude": coordinate!.longitude,
              "searchString": self.searchController.searchBar.text!]
@@ -189,7 +185,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        self.uiviewDidFinish?.on(.next(true))
+        self.uiviewDidFinish.on(.next(true))
     }
 }
 

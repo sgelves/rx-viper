@@ -15,10 +15,10 @@ protocol ViewToPresePlacesProtocol {
         Notify presenter that view is ready
     */
     var uiviewDidLoad: PublishSubject<Bool> { get }
-    var loadMoreResultData: PublishSubject<Bool>? { get }
-    var resetResultData: PublishSubject<Dictionary<String, Any>>? { get }
-    var selectedPlace: PublishSubject<Local>? { get }
-    var uiviewDidFinish: PublishSubject<Bool>? { get }
+    var loadMoreResultData: PublishSubject<Bool> { get }
+    var resetResultData: PublishSubject<Dictionary<String, Any>> { get }
+    var selectedPlace: PublishSubject<Local> { get }
+    var uiviewDidFinish: PublishSubject<Bool> { get }
     
     
     func placesHasChanged(places: [Local])
