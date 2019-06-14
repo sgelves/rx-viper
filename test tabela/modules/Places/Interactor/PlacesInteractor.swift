@@ -19,28 +19,28 @@ class PlacesInteractor: NSObject, InterToPresePlacesProtocol, InfinitePlacesList
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
-    var interactor: PreseToInterPlacesProtocol
+    var presenter: PreseToInterPlacesProtocol
+    
+    var placesBehaviorSubject: PublishSubject<[Local]> = PublishSubject<[Local]>()
     
     fileprivate let dispose = DisposeBag()
     
     // Observable Interactor initialization
-    var placesBehaviorSubject: PublishSubject<[Local]>
     
     init (input: PreseToInterPlacesProtocol) {
         
-        self.placesBehaviorSubject = PublishSubject<[Local]>()
-        self.interactor = input
+        self.presenter = input
         super.init()
         
         // subscribe to input listeners
-        self.interactor.userRequestedPlacesPage.subscribe({ event in
+        self.presenter.userRequestedPlacesPage.subscribe({ event in
             self.getNextPage {
                 // Emit data back
                 self.placesBehaviorSubject.on(.next(self.resultData))
             }
         }).disposed(by: dispose)
         
-        self.interactor.userResetInitialData.subscribe({ event in
+        self.presenter.userResetInitialData.subscribe({ event in
             if (event.element != nil) {
                 
                 self.startLocaisState(latitude: event.element?["latitude"] as! Double,

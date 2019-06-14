@@ -11,7 +11,7 @@ import RxSwift
 
 protocol PreseToInterPlacesProtocol: AnyObject {
     
-    var userRequestedPlacesPage: PublishSubject<Bool> { get set }
-    var userResetInitialData: PublishSubject<Dictionary<String, Any>> { get set }
+    var userRequestedPlacesPage: PublishSubject<Bool> { get }
+    var userResetInitialData: PublishSubject<Dictionary<String, Any>> { get }
     
 }

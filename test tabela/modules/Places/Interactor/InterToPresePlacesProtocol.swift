@@ -11,6 +11,6 @@ import RxSwift
 
 protocol InterToPresePlacesProtocol {
     
-    var placesBehaviorSubject: PublishSubject<[Local]> { get set }
+    var placesBehaviorSubject: PublishSubject<[Local]> { get }
     
 }

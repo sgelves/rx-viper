@@ -18,19 +18,18 @@ class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol, 
     var placesDataChanged = PublishSubject<[Local]>()
     
     // Observables aimed to interactor
-    var userResetInitialData: PublishSubject<Dictionary<String, Any>>
-    var userRequestedPlacesPage: PublishSubject<Bool>
+    var userResetInitialData: PublishSubject<Dictionary<String, Any>> = PublishSubject<Dictionary>()
+    var userRequestedPlacesPage: PublishSubject<Bool> = PublishSubject<Bool>()
     
     let dispose = DisposeBag()
     
     init (view: ViewToPresePlacesProtocol) {
         //initialize observables
-        userResetInitialData = PublishSubject<Dictionary>()
-        userRequestedPlacesPage = PublishSubject<Bool>()
         
         super.init()
         
         self.view = view
+        
         self.view.uiviewDidLoad.subscribe({ event in
              self.connect()
         }).disposed(by: dispose)
@@ -69,7 +68,7 @@ class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol, 
             self.router.childDidFinish()
         }).disposed(by: dispose)
         
-        self.interactor.placesBehaviorSubject.subscribe({ event in //Sub A added and most recent event replayed ("starting value")
+        self.interactor.placesBehaviorSubject.subscribe({ event in
             if event.element != nil {
                 self.placesDataChanged.on(.next(event.element!))
             }

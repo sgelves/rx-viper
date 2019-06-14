@@ -10,12 +10,10 @@ import UIKit
 import Kingfisher
 import CoreLocation
 import RxSwift
-import RxCocoa
+// import RxCocoa
 
 class PlacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ViewToPresePlacesProtocol, Storyboarded, CLLocationManagerDelegate  {
     
-    var input: PreseToViewPlacesProtocol!
-
     var data: [Local] = []
     
     private var coordinate: CLLocationCoordinate2D?
@@ -33,6 +31,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
     var selectedPlace: PublishSubject<Local> = PublishSubject<Local>()
     var uiviewDidFinish: PublishSubject<Bool> = PublishSubject<Bool>()
     
+    var presenter: PreseToViewPlacesProtocol!
     
     fileprivate let dispose = DisposeBag()
 
@@ -45,7 +44,7 @@ class PlacesViewController: UIViewController, UITableViewDataSource, UITableView
         self.uiviewDidLoad.on(.next(true))
         
         // Subscribe to presenter
-        input.placesDataChanged.subscribe({ event in
+        presenter.placesDataChanged.subscribe({ event in
             if (event.element != nil) {
                 self.data = event.element!
                 self.tableView.reloadData()
