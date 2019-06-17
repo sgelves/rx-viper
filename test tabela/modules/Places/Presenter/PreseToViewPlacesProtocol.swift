@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol PreseToViewPlacesProtocol: AnyObject {
+protocol PreseToViewPlacesProtocol: class {
     
     var placesDataChanged: PublishSubject<[Local]> { get }
     

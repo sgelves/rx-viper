@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol InterToPresePlacesProtocol {
+protocol InterToPresePlacesProtocol: class {
     
     var placesBehaviorSubject: PublishSubject<[Local]> { get }
     

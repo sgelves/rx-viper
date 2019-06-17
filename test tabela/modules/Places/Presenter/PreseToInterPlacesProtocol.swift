@@ -9,7 +9,7 @@
 import Foundation
 import RxSwift
 
-protocol PreseToInterPlacesProtocol: AnyObject {
+protocol PreseToInterPlacesProtocol: class {
     
     var userRequestedPlacesPage: PublishSubject<Bool> { get }
     var userResetInitialData: PublishSubject<Dictionary<String, Any>> { get }

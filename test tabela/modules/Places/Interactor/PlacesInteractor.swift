@@ -19,14 +19,16 @@ class PlacesInteractor: NSObject, InterToPresePlacesProtocol, InfinitePlacesList
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     
-    var presenter: PreseToInterPlacesProtocol
+    weak var presenter: PreseToInterPlacesProtocol!
     
+    // Observable Interactor initialization
     var placesBehaviorSubject: PublishSubject<[Local]> = PublishSubject<[Local]>()
     
     fileprivate let dispose = DisposeBag()
     
-    // Observable Interactor initialization
-    
+    /**
+        Initialize references and observers
+     **/
     init (input: PreseToInterPlacesProtocol) {
         
         self.presenter = input

@@ -10,7 +10,7 @@ import RxSwift
 
 class PlacesPresenter: NSObject, PlacesModuleInput, PreseToInterPlacesProtocol, PreseToViewPlacesProtocol {
 
-    var view: ViewToPresePlacesProtocol!
+    weak var view: ViewToPresePlacesProtocol!
     var interactor: InterToPresePlacesProtocol!
     var router: PlacesCoordinatorInput!
     

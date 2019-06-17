@@ -8,7 +8,7 @@
 
 import RxSwift
 
-protocol ViewToPresePlacesProtocol {
+protocol ViewToPresePlacesProtocol: class {
 
     /**
         @author Sergio
